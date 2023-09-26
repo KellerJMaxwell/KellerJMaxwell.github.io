@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Miles to Kilometers Converter</title>
+</head>
+<body>
+    <h1>Miles to Kilometers Converter</h1>
+    <p>Enter the distance in miles:</p>
+    <input type="number" id="milesInput">
+    <button onclick="convertMilesToKilometers()">Convert</button>
+    <p id="result"></p>
+
+    <script>
+        function convertMilesToKilometers() {
+            // Get the user input in miles
+            var miles = parseFloat(document.getElementById("milesInput").value);
+
+            // Check if the input is a valid number
+            if (!isNaN(miles)) {
+                // Perform the conversion
+                var kilometers = miles * 1.60934;
+
+                // Display the result
+                document.getElementById("result").innerHTML = miles + " miles is approximately " + kilometers.toFixed(2) + " kilometers.";
+            } else {
+                // Handle invalid input
+                document.getElementById("result").innerHTML = "Please enter a valid number for miles.";
+            }
+        }
+    </script>
+</body>
+</html>
+
+
